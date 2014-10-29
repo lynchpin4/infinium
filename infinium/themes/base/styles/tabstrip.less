@@ -1,0 +1,369 @@
+.strip .drag-top
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 10px;
+	width: 100%;
+	
+	z-index: 20;
+	
+	cursor: pointer;
+	
+	-webkit-user-select: none;
+	-webkit-app-region: drag;
+}
+
+.strip {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  padding: 0;
+
+  overflow: hidden;
+  -webkit-user-select: none;
+}
+
+.strip .bottom {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  right: 0;
+}
+
+.strip .command {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+
+  cursor: pointer;
+  text-align: center;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.strip .command .icon {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+.strip .command .fa-icon {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 1.2em;
+}
+
+.strip .command.back {
+  left: 0;
+}
+.strip .command.back:hover {
+  color: hsl(200, 50%, 50%);
+}
+.strip .command.back.disabled {
+  color: hsl(0, 0%, 80%) !important;
+}
+
+.strip .command.forward {
+  left: 28px;
+}
+.strip .command.forward:hover {
+  color: hsl(200, 50%, 50%);
+}
+.strip .command.forward.disabled {
+  color: hsl(0, 0%, 80%) !important;
+}
+
+.strip .command.new {
+  left: 396px;
+}
+.strip .command.new:hover {
+  color: hsl(100, 50%, 50%);
+}
+
+.strip .command.update {
+  display: none;
+  right: 0px;
+}
+.strip.breach_update .command.update {
+  color: hsl(0, 100%, 50%);
+  display: block;
+}
+.strip.module_update .command.update {
+  color: hsl(20, 100%, 50%);
+  display: block;
+}
+.strip .command.update:hover {
+  color: hsl(20, 0%, 50%);
+}
+
+.strip #box {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 56px;
+  width: 340px;
+
+  overflow: hidden;
+}
+
+.strip #box iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.strip .wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 424px;
+  right: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+.strip.breach_update .wrapper,
+.strip.module_update .wrapper {
+  right: 28px;
+}
+
+.strip .tabs {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+}
+
+.strip .tabs .tab {
+  position: absolute;
+  max-width: 170px;
+  min-width: 170px;
+  top: 0;
+  bottom: 0;
+
+  overflow: hidden;
+
+  cursor: pointer;
+  transition: left 0.1s;
+}
+
+.strip .tabs .tab > div.back-loading {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+  background-color: hsl(0, 0%, 85%);
+}
+
+.strip .tabs .tab > div.loading {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+  opacity: 0;
+}
+
+.strip .tabs .tab:hover > div.loading {
+  opacity: 0.7;
+}
+
+.strip .tabs .tab.active > div.loading {
+  opacity: 1.0;
+}
+
+.strip .tabs .tab > div.favicon {
+  position: absolute;
+  display: none;
+  vertical-align: top;
+
+  top: 13px;
+  left: 7px;
+  height: 18px;
+  width: 18px;
+
+  background-size: cover;
+
+  /* -webkit-filter: grayscale(0.5); */
+  opacity: 0.3;
+}
+
+.strip .tabs .tab.active > div.favicon {
+  /* -webkit-filter: grayscale(0); */
+  opacity: 1.0;
+}
+
+.strip .tabs .tab > div.content {
+  position: absolute;
+  display: block;
+  left: 7px;
+  right: 5px;
+  top: 2px;
+  bottom: 5px;
+  vertical-align: top;
+
+  overflow: hidden;
+}
+
+.strip .tabs .tab > div.content.with-favicon {
+  left: 32px;
+}
+.strip .tabs .tab:hover > div.content {
+  right: 25px;
+}
+
+.strip .tabs .tab > div.content .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.strip .tabs .tab > div.content .title {
+  margin-top: 12px;
+  font-weight: normal;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.strip .tabs .tab.active > div.content .title {
+  font-weight: bold;
+}
+
+.strip .tabs .tab > div.close {
+  display:none;
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  right: 0;
+  width: 25px;
+
+  font-size: 0.8em;
+  cursor: pointer;
+}
+.strip .tabs .tab:hover > div.close {
+  display: block;
+}
+.strip .tabs .tab > div.close:hover {
+  color: hsl(0, 50%, 50%) !important;
+}
+.strip .tabs .tab > div.close > div {
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+/* Dark Strip */
+.strip.dark {
+  background-color: hsl(0, 0%, 19%);
+}
+
+.strip.dark .bottom {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.strip.dark .command {
+  color: hsl(0, 0%, 70%);
+}
+
+.strip.dark .box {
+  background-color: hsl(0, 0%, 10%);
+  border-bottom: 5px solid hsl(0, 0%, 0%);
+  border-top: 5px solid hsl(0, 0%, 10%);
+}
+
+.strip.dark .tabs .tab {
+  color: white;
+}
+
+.strip.dark .tabs .tab > div.loading {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.strip.dark .tabs .tab > div.back-loading {
+  background-color: hsl(0, 0%, 35%);
+}
+
+.strip.dark .tabs .tab.active > div.loading {
+  background-color: hsl(0, 0%, 35%);
+}
+
+.strip.dark .tabs .tab > div.content .shadow {
+  box-shadow: inset -6px 0px 6px hsl(0, 0%, 19%);
+}
+
+.strip.dark .tabs .tab > div.content .title {
+  color: hsl(0, 0%, 70%);
+}
+
+.strip.dark .tabs .tab.active > div.content .title {
+  color: hsl(0, 0%, 100%);
+}
+
+.strip.dark .tabs .tab > div.close {
+  color: hsl(0, 0%, 40%);
+}
+
+/* Strip light */
+.strip.light {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.strip.light .bottom {
+  background-color: hsl(0, 0%, 85%);
+}
+
+.strip.light .command {
+  color: hsl(0, 0%, 30%);
+}
+
+.strip.light #box {
+  background-color: hsl(0, 0%, 100%);
+  border-bottom: 4px solid hsl(0, 0%, 85%);
+  border-top: 5px solid hsl(0, 0%, 100%);
+}
+
+.strip.light .tabs .tab {
+  color: hsl(0, 0%, 20%);
+}
+
+.strip.light .tabs .tab.active { 
+  background-color: hsl(0, 0%, 96%);
+}
+
+.strip.light .tabs .tab.active > div.loading {
+  background-color: hsl(0, 0%, 65%);
+}
+
+.strip.light .tabs .tab > div.content .shadow {
+  box-shadow: inset -6px 0px 6px hsl(0, 0%, 98%);
+}
+.strip.light .tabs .tab.active > div.content .shadow {
+  box-shadow: inset -6px 0px 6px hsl(0, 0%, 96%);
+}
+
+.strip.light .tabs .tab > div.content .title {
+  color: hsl(0, 0%, 30%);
+  font-weight: normal !important;
+}
+.strip.light .tabs .tab.active > div.content .title {
+  color: hsl(0, 0%, 10%);
+}
+
+.strip.light .tabs .tab > div.close {
+  color: hsl(0, 0%, 30%);
+}
+
+

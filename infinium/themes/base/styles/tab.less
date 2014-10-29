@@ -1,0 +1,209 @@
+/* This code is mostly ripped from @spolu's breach tabstrip, which is based on a dribbble design I love and noticed before Breach came out. Good call on design bro. Good call. */
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.box .ssl {
+  position: absolute;
+  left: 7px;
+  width: 10px;
+  top: 8px;
+  bottom: 12px;
+
+  font-size: 1.2em;
+}
+
+.box.ssl_auth .ssl {
+  color: hsl(110, 80%, 45%) !important;
+}
+
+.box.focus .ssl {
+  display: none;
+}
+
+.box .search {
+  display: none;
+
+  position: absolute;
+  left: 9px;
+  width: 10px;
+  top: 8px;
+  bottom: 12px;
+
+  font-size: 1.2em;
+}
+
+.box.focus .search {
+  display: block;
+}
+
+.box.find_in_page .search {
+  color: hsl(200, 80%, 45%) !important;
+}
+
+.box .input .shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  z-index: 10;
+}
+
+.box .input,
+.box .input:focus {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 0;
+  bottom: 0;
+}
+
+.box .input.find {
+}
+.box .input.find.match {
+}
+.box .input.find.fail {
+}
+
+.box .input form {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.box .input form input,
+.box .input form input:focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  outline: none !important;
+  border: 0;
+  padding: 0;
+  font-weight: normal;
+  width: 100%;
+}
+
+.box .input form input {
+  opacity: 0;
+}
+
+.box.focus .input form input,
+.box .input:hover form input {
+  opacity: 1;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+
+.box .input .glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding-top: 9px;
+
+  border: 0;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.box .input .glass .host {
+  font-weight: bold;
+}
+
+.box .input .glass .path {
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.box .input:hover .glass,
+.box.focus .input .glass {
+  display: none;
+}
+
+/* Light */
+.box.light .ssl {
+  color: hsl(0, 0%, 97%);
+}
+
+.box.light .input .shadow {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0px 0px 6px 6px hsl(0, 0%, 100%);
+}
+
+.box.light .input.find {
+  background-color: hsla(100, 0%, 90%, 1);
+}
+.box.light .input.find.match {
+  background-color: hsla(100, 40%, 90%, 1);
+}
+.box.light .input.find.fail {
+  background-color: hsla(0, 40%, 90%, 1);
+}
+
+.box.light .input input,
+.box.light .input input:focus {
+  color: hsl(0, 0%, 15%);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.box.light .input .glass .host {
+  color: hsl(0, 0%, 20%);
+}
+.box.light .input .glass .path {
+  color: hsl(0, 0%, 40%);
+}
+.box.light .input .glass .hash {
+  color: hsl(0, 0%, 40%);
+}
+
+/* Dark */
+.box.dark .ssl {
+  color: hsl(0, 0%, 80%);
+}
+.box.dark .search {
+  color: hsl(0, 0%, 95%);
+}
+
+.box.dark .input .shadow {
+  background-color: hsl(0, 0%, 10%);
+  box-shadow: 0px 0px 6px 6px hsl(0, 0%, 10%);
+}
+
+.box.dark .input.find {
+  background-color: hsla(100, 0%, 90%, 1);
+}
+.box.dark .input.find.match {
+  background-color: hsla(100, 40%, 90%, 1);
+}
+.box.dark .input.find.fail {
+  background-color: hsla(0, 40%, 90%, 1);
+}
+
+.box.dark .input input,
+.box.dark .input input:focus {
+  color: hsl(0, 0%, 95%);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.box.dark .input .glass .host {
+  color: hsl(0, 0%, 80%);
+}
+.box.dark .input .glass .path {
+  color: hsl(0, 0%, 60%);
+}
+.box.dark .input .glass .hash {
+  color: hsl(0, 0%, 60%);
+}

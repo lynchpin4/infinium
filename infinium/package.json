@@ -1,0 +1,8 @@
+{
+  "name": "infinium",
+  "version": "0.1.0",
+  "main": "app/main.js",
+  "devDependencies": {
+    "less": "^1.7.5"
+  }
+}

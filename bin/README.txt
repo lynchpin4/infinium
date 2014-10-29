@@ -1,0 +1,1 @@
+Windows: Place the atom shell bin files in this directory (May require a custom build)
