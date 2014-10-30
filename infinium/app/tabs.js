@@ -56,6 +56,7 @@ TabView.prototype.initView = function()
 	this.webview.addEventListener('destroyed', function() {
 		this.active = false;
 		this.loadState = "destroyed";
+        console.log('destroyed tab webview');
 		this.update();
 	}.bind(this));
 	
@@ -98,7 +99,7 @@ TabView.prototype.initView = function()
 		this.parent.addTab(e);
 	}.bind(this));
 	
-	setInterval(this.updateTick.bind(this), 500);
+	this.updateInterval = setInterval(this.updateTick.bind(this), 500);
 }
 
 TabView.prototype.getUrlParts = function()
@@ -157,6 +158,18 @@ TabView.prototype.setUrl = function(url)
 	}
 	
 	this.webview.src = url;
+}
+
+TabView.prototype.close = function()
+{
+    var i = this.parent.tabs.indexOf(this);
+    this.parent.tabs.splice(i, 1);
+    this.parent.emit(Tabs.EVENT_TAB_CLOSED, this);
+    
+    this.frameHolder.removeChild(this.webview);
+    delete this.webview;
+    
+    clearInterval(this.updateInterval);
 }
 
 TabView.prototype.show = function()

@@ -86,6 +86,15 @@ TabStripController.prototype.onAddNewTab = function()
 	Infinium.tabs.addTab('http://google.com/');
 }
 
+TabStripController.prototype.repositionAllTabs = function()
+{
+    for (var i=0;i<this.tabs.tabs.length;i++)
+    {
+        var tab = this.tabs.tabs[i];
+        this.positionTab(tab, i);
+    }
+}
+
 TabStripController.prototype.positionTab = function(tab, idx)
 {
 	var el = tab.tabstrip_el;
@@ -132,6 +141,10 @@ TabStripController.prototype.onTabAdded = function(tab)
     
     $("#"+tab_id).click(function(){
         tab.show();
+    });
+    
+    $("#"+tab_id+' .close').click(function(){
+        tab.close();
     });
 }
 
@@ -195,7 +208,8 @@ TabStripController.prototype.onTabState = function(tab)
 
 TabStripController.prototype.onTabClosed = function(tab)
 {
-	
+	this.tabs_el[0].removeChild(tab.tabstrip_el[0]);
+    this.repositionAllTabs();
 }
 
 TabStripController.prototype.render = function()
