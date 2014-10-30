@@ -1,3 +1,7 @@
+// --------------------------
+// class: BrowserController
+// Manages the view for the window
+// --------------------------
 function BrowserController()
 {
 	
@@ -5,11 +9,14 @@ function BrowserController()
 
 BrowserController.prototype.init = function()
 {
-	// Initial Render
+	// Render
 	this.render();
 	
 	// Create tab strip controller
-	this.tabStripController = new TabStripController();
+	this.tabStrip = new TabStripController();
+	
+	// Create the window controller
+	this.window = new WindowController();
 }
 
 BrowserController.prototype.render = function()

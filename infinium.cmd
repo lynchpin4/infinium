@@ -1,2 +1,2 @@
-bin\atom.exe infinium --browser-plugin=enabled
+bin\atom.exe infinium --enable-plugins=enabled
 infinium

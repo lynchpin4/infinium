@@ -40,6 +40,8 @@
   top: 0;
   bottom: 0;
   width: 28px;
+  
+  z-index: 45;
 
   cursor: pointer;
   text-align: center;
@@ -51,6 +53,14 @@
   margin-top: 15px;
   font-size: 0.9em;
 }
+
+.strip .command .menu-icon
+{
+	font-size: 1.4em;
+	margin-top: 12px;
+	margin-left: 6px;
+}
+
 .strip .command .fa-icon {
   display: inline-block;
   margin-top: 12px;
@@ -58,8 +68,13 @@
 }
 
 .strip .command.back {
+  left: 28px;
+}
+
+.strip .command.menu {
   left: 0;
 }
+
 .strip .command.back:hover {
   color: hsl(200, 50%, 50%);
 }
@@ -68,7 +83,7 @@
 }
 
 .strip .command.forward {
-  left: 28px;
+  left: 56px;
 }
 .strip .command.forward:hover {
   color: hsl(200, 50%, 50%);
@@ -78,7 +93,7 @@
 }
 
 .strip .command.new {
-  left: 396px;
+  left: 424px;
 }
 .strip .command.new:hover {
   color: hsl(100, 50%, 50%);
@@ -105,7 +120,7 @@
 
   top: 0;
   bottom: 0;
-  left: 56px;
+  left: 84px;
   width: 340px;
 
   overflow: hidden;
@@ -120,7 +135,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 424px;
+  left: 452px;
   right: 0;
   padding: 0;
 

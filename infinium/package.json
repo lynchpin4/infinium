@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "app/main.js",
   "devDependencies": {
-    "less": "^1.7.5"
+    "less": "^1.7.5",
+    "lodash": "^2.4.1"
   }
 }

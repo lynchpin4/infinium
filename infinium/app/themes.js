@@ -21,6 +21,8 @@ function Themes()
 	
 }
 
+// todo: this class needs to be an eventemitter and theme ready from that should start the callback
+
 Themes.prototype.loadTheme = function(theme)
 {
 	var dir = path.join(__dirname, '..', 'themes', global.theme.name);
@@ -45,7 +47,7 @@ Themes.prototype.loadTheme = function(theme)
 		if (e)
 			console.dir(e);
 		
-		console.log('Output CSS: '+css);
+	//	console.log('Output CSS: '+css);
 		global.theme.css = css;
 		
 		if (this.cb)
