@@ -79,6 +79,8 @@ TabStripController.prototype.init = function()
 	
 	// Register events from the UI
 	$('.command.new').click(this.onAddNewTab.bind(this));
+    $('.command.forward').click(this.onGoForward.bind(this));
+    $('.command.back').click(this.onGoBack.bind(this));
     
     $('.command.menu').click(function(){
         console.log('app menu show');
@@ -90,6 +92,30 @@ TabStripController.prototype.init = function()
 TabStripController.prototype.onAddNewTab = function()
 {
 	Infinium.tabs.addTab('http://google.com/');
+}
+
+TabStripController.prototype.onGoForward = function()
+{
+    var tab = this.tabs.active;
+    if (tab && tab.webview)
+    {
+        if (tab.webview.canGoForward())
+        {
+            tab.webview.goForward();
+        }
+    }
+}
+
+TabStripController.prototype.onGoBack = function()
+{
+    var tab = this.tabs.active;
+    if (tab && tab.webview)
+    {
+        if (tab.webview.canGoBack())
+        {
+            tab.webview.goBack();
+        }
+    }
 }
 
 TabStripController.prototype.repositionAllTabs = function()
@@ -205,6 +231,27 @@ TabStripController.prototype.onTabState = function(tab)
             $('.box .hash').text(tab.url_parts.hash);
             
             if (this.input_blurred) $('.box input').val(tab.url);
+        }
+        
+        if (tab.webview)
+        {
+            if (tab.webview.canGoBack())
+            {
+                this.back.removeClass('disabled');
+            }
+            else
+            {
+                this.back.addClass('disabled');
+            }
+            
+            if (tab.webview.canGoForward())
+            {
+                this.forward.removeClass('disabled');
+            }
+            else
+            {
+                this.forward.addClass('disabled');
+            }
         }
         
         $('.tab').removeClass('active');

@@ -13,11 +13,10 @@ AppMenuController.prototype.init = function()
 	this.render();
 }
 
+// todo: mask/overlay invisible div to detect for close event
 AppMenuController.prototype.hideClickHandler = function()
 {
-     console.log('close app menu handler');
     setTimeout(function(){
-       
         browser.appMenu.hide();
     }, 1);
 }
@@ -25,18 +24,20 @@ AppMenuController.prototype.hideClickHandler = function()
 AppMenuController.prototype.hide = function()
 {
     $('.app-menu').removeClass('show');
+    $('.app-menu-cover').removeClass('show');
 }
 
 AppMenuController.prototype.show = function()
 {
     $('.app-menu').addClass('show');
+    $('.app-menu-cover').addClass('show');
     
     if (!this.events_added)
     {
         this.events_added = true;
         
         //$("#tabstrip").click(this.hideClickHandler);
-        $("#webframes").click(this.hideClickHandler);
+        $(".app-menu-cover").click(this.hideClickHandler);
     }
 }
 
