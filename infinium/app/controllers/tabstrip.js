@@ -233,6 +233,7 @@ TabStripController.prototype.onTabState = function(tab)
             if (this.input_blurred) $('.box input').val(tab.url);
         }
         
+        try {
         if (tab.webview)
         {
             if (tab.webview.canGoBack())
@@ -253,6 +254,7 @@ TabStripController.prototype.onTabState = function(tab)
                 this.forward.addClass('disabled');
             }
         }
+        } catch (ex) { }
         
         $('.tab').removeClass('active');
         el.addClass('active');
