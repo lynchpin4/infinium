@@ -33,6 +33,7 @@ TabStripController.prototype.init = function()
 	this.back = this.strip.find('.command.back');
 	this.forward = this.strip.find('.command.forward');
 	this.newtab = this.strip.find('.command.new');
+    this.menu = this.strip.find('.command.menu');
 	
 	// Tab elements (may not even be necessary)
 	this.tab_els = [];
@@ -78,6 +79,11 @@ TabStripController.prototype.init = function()
 	
 	// Register events from the UI
 	$('.command.new').click(this.onAddNewTab.bind(this));
+    
+    $('.command.menu').click(function(){
+        console.log('app menu show');
+        setTimeout(function(){ window.browser.appMenu.show(); }, 1); // i have no idea why this but for some reason the click handler is on the wrong context.?
+    });
 }
 
 // Methods

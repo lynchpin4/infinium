@@ -1,0 +1,88 @@
+.app-menu
+{
+    min-width: 280px;
+    
+    position: fixed;
+    top: 10px;
+    left: 8px;
+    
+    visibility: hidden;
+    z-index: 1;
+    
+    cursor: pointer;
+}
+
+.app-menu.show
+{
+    visibility: visible;
+    z-index: 400;
+}
+
+.app-menu.dark
+{
+    background-color: #2d2e30;
+    box-shadow:0px 0px 9px #95A5B5;
+}
+
+.app-menu .header
+{
+    height: 60px;
+    background-color: #2d2e30;
+}
+
+.app-menu .header span.crumb
+{
+    color: #6d7276;
+}
+
+.app-menu .header span.crumb.active
+{
+    color: #f2f2f4;
+}
+
+.app-menu .header .holder
+{
+    padding: 8px;
+    padding-top: 23px;
+    padding-left: 15px;
+}
+
+.app-menu ul
+{
+    list-style: none;
+    background-color: #343537;
+}
+
+.app-menu li
+{
+    padding: 5px;
+    padding-left: 10px;
+    border-bottom: 1px solid #38393b;
+    border-top: 1px solid #38393b;
+    margin-top: -1px;
+}
+
+.app-menu li:hover
+{
+    background-color: #2d2e30;
+}
+
+.app-menu li.seperator:hover
+{
+    background-color: #343537;
+}
+
+.app-menu li.seperator
+{
+    padding: 0px;
+    height: 25px;
+    border-bottom: none;
+}
+
+.app-menu li a
+{
+    /*color: #26BBF0; */
+    color: #e4e4e4;
+    font-size: 13px;
+    line-height: 24px;
+}

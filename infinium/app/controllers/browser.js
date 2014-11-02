@@ -17,6 +17,9 @@ BrowserController.prototype.init = function()
 	
 	// Create the window controller
 	this.window = new WindowController();
+    
+    // Create the app menu controller
+    this.appMenu = new AppMenuController();
 }
 
 BrowserController.prototype.render = function()
