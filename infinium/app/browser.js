@@ -27,7 +27,6 @@ function Browser()
 	this.window.loadUrl('file://' + __dirname + '/browser.html');
 	this.window.on('closed', function() { this.window = null; }.bind(this));
 	
-	this.window.openDevTools();
 	this.window.focus();
 }
 

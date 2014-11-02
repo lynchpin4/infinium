@@ -42,9 +42,6 @@ TabView.prototype.initView = function()
 	$('#webframes').append(this.frameHolder);
 	
 	// attach event handlers
-	this.webview.addEventListener('console-message', function(e) {
-		console.log('page:', e.message);
-	}.bind(this));
 	
 	this.webview.addEventListener('crashed', function() {
 		// on tab closed
