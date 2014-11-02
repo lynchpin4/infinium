@@ -96,7 +96,7 @@ TabView.prototype.initView = function()
 	
 	this.webview.addEventListener('new-window', function(e) {
 		// check for window-bombing here
-		this.parent.addTab(e);
+		this.parent.addTab(e.url);
 	}.bind(this));
 	
 	this.updateInterval = setInterval(this.updateTick.bind(this), 500);
@@ -169,11 +169,17 @@ TabView.prototype.close = function()
     this.frameHolder.removeChild(this.webview);
     delete this.webview;
     
+    if (this.parent.lastActive)
+    {
+        //this.parent.lastActive.show();
+    }
+    
     clearInterval(this.updateInterval);
 }
 
 TabView.prototype.show = function()
 {
+    this.parent.lastActive = this.parent.active == this ? this.parent.lastActive : this.parent.active;
 	this.parent.active = this;
 	
 	$('.webframe').removeClass('visible');

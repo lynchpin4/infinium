@@ -210,6 +210,12 @@ TabStripController.prototype.onTabClosed = function(tab)
 {
 	this.tabs_el[0].removeChild(tab.tabstrip_el[0]);
     this.repositionAllTabs();
+    
+    setTimeout(function(){
+        console.log('show last active: ');
+        console.dir(this.tabs.lastActive);
+        this.tabs.lastActive.show();
+    }.bind(this), 250);
 }
 
 TabStripController.prototype.render = function()
