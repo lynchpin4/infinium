@@ -19,7 +19,7 @@ function Browser()
 		height: this.height,
 		frame: false,
 		'web-preferences': {
-			plugins: true,  // Required by <webview>.
+			plugins: true,  // Required by <webview>. Still doesn't work in <webview> -- Enabling it in overridecreateplugins manually half works but has unintended effects (flash has wrong security context, doesn't render ontop of webview or at all)
 			javascript: true  // Test whether web-preferences crashes.
 		}
 	});

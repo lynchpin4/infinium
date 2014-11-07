@@ -35,6 +35,8 @@ TabView.prototype.initView = function()
 	this.favicon = null;
 	
 	this.webview = new WebView();
+    $(this.webview).attr('plugins', 'on');
+    
 	this.frameHolder.appendChild(this.webview);
 	
 	this.loadState = "loading";
