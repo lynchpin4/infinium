@@ -1,4 +1,4 @@
 infinium
 ========
 
-i hope this will someday be a great browser.
+THIS PROJECT HAS MOVED! https://github.com/infiniumproject/infinium
